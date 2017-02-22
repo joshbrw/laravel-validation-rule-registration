@@ -45,7 +45,7 @@ trait RegistersValidationRules
 
         $this->ensureClassIsValidationRule($replacerClass);
 
-        $this->getValidationFactory()->replacer($ruleName, "{$replacerClass}@replace");
+        $this->getValidationFactory()->replacer($ruleName, "{$replacerClass}@replacer");
 
         return true;
     }
