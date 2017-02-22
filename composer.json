@@ -1,0 +1,21 @@
+{
+    "name": "joshbrw/laravel-validation-rule-registration",
+    "description": "A package that is designed to help aid rapid development and registration of custom Validation Rules in Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josh Brown",
+            "email": "josh@joshbrown.me"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Joshbrw\\ValidationRule\\": "src/"
+        }
+    },
+    "require": {
+        "illuminate/support": "^5.4",
+        "php": ">=7.0"
+    }
+}
