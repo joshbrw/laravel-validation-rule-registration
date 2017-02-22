@@ -28,7 +28,7 @@ trait RegistersValidationRules
 
         $this->ensureClassIsValidationRule($ruleClass);
 
-        $this->getValidationFactory()->extend($ruleName, [$ruleClass, 'validate']);
+        $this->getValidationFactory()->extend($ruleName, "{$ruleClass}@validaate");
 
         return true;
     }
@@ -45,7 +45,7 @@ trait RegistersValidationRules
 
         $this->ensureClassIsValidationRule($replacerClass);
 
-        $this->getValidationFactory()->replacer($ruleName, [$replacerClass, 'replace']);
+        $this->getValidationFactory()->replacer($ruleName, "{$replacerClass}@replace");
 
         return true;
     }
