@@ -20,15 +20,16 @@ trait RegistersValidationRules
      * Register a Validation Rule
      * @param string $ruleName The name of the rule, i.e. 'valid_job_id'
      * @param string $ruleClass The fully-qualified classname of the class to use.
+     * @param string|null $fallbackMessage Fallback validation error message.
      * @return bool
      */
-    public function registerValidationRule(string $ruleName, string $ruleClass): bool
+    public function registerValidationRule(string $ruleName, string $ruleClass, string $fallbackMessage = null): bool
     {
         $this->ensureServiceProvider();
 
         $this->ensureClassIsValidationRule($ruleClass);
 
-        $this->getValidationFactory()->extend($ruleName, "{$ruleClass}@validate");
+        $this->getValidationFactory()->extend($ruleName, "{$ruleClass}@validate", $fallbackMessage);
 
         return true;
     }
